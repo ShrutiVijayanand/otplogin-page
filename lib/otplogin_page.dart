@@ -49,94 +49,90 @@ class _OtpLoginPageState extends State<OtpLoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
+
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
-        child: Align(
-          alignment: Alignment.center,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              // Text elements
-              Text(
-                'verify your',
-                style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Text elements
+            Text(
+              'Verify your',
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
               ),
-              Text(
-                'phone number',
-                style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                ),
+            ),
+            Text(
+              'phone number',
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
               ),
-              SizedBox(height: 5),
-              Text(
-                'Enter your phone number to send',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.grey[600],
-                ),
+            ),
+
+            Text(
+              'Enter your phone number to send',
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.grey[600],
               ),
-              SizedBox(height: 5),
-              Text(
-                'One-time password',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.grey[600],
-                ),
+            ),
+            Text(
+              'One-time password',
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.grey[600],
               ),
-              SizedBox(height: 50),
-              Container(
-                width: double.infinity,
-                child: TextField(
-                  controller: _phoneController,
-                  keyboardType: TextInputType.phone,
-                  decoration: InputDecoration(
-                    labelText: 'Phone Number',
-                    labelStyle: TextStyle(color: Color(0xFF00AD83)),
-                    hintText: 'Enter phone number',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: BorderSide(color: Color(0xFF00AD83)),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: BorderSide(color: Color(0xFF00AD83)),
-                    ),
+            ),
+            Spacer(),
+            Container(
+              width: double.infinity,
+              child: TextField(
+                controller: _phoneController,
+                keyboardType: TextInputType.phone,
+                decoration: InputDecoration(
+                  labelText: 'Phone Number',
+                  labelStyle: TextStyle(color: Color(0xFF00AD83)),
+                  hintText: 'Enter phone number',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: BorderSide(color: Color(0xFF00AD83)),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: BorderSide(color: Color(0xFF00AD83)),
                   ),
                 ),
               ),
-              SizedBox(height: 30),
-              Container(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {
-                    _navigateToOtpVerification();
-                  },
-                  child: Text(
-                    'Get OTP',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18, // Increase the font size
-                    ),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xFF00AD83),
-                    shape: StadiumBorder(),
-                    padding: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-                    textStyle: TextStyle(fontSize: 18),
+            ),
+            Spacer(),
+            Container(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  _navigateToOtpVerification();
+                },
+                child: Text(
+                  'Get OTP',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
                   ),
                 ),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xFF00AD83),
+                  shape: StadiumBorder(),
+                  padding: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                  textStyle: TextStyle(fontSize: 18),
+                ),
               ),
-            ],
-          ),
+            ),
+            Spacer(),
+          ],
         ),
       ),
     );
